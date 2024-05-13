@@ -1,0 +1,29 @@
+import matplotlib.pyplot as plt
+
+# Data
+categories = ['AQ1', 'AQ2', 'AQ3', 'AQ4', 'AQ5', 'AQ6', 'AQ_Ctrl_1', 'AQ_Ctrl_2']
+values_line1 = [6,0,2,7,2,0,3]  # Line graph 1 values
+constant_value = 8.729  # Constant value for the second line graph
+
+#0	0.02	0	0	0	0	0.003333333	0.008164966
+#AQ1	AQ2	AQ3	AQ4	AQ Ctrl 1	ISM/Well 4&5
+
+
+# Creating line graphs
+plt.figure(figsize=(8, 7))
+
+# Plotting first line graph
+plt.plot(categories, values_line1, marker='o', linestyle='-', color='blue', label='CO (ppm)')
+
+# Plotting second line graph with a constant value
+plt.plot(categories, [constant_value] * len(categories), marker='x', linestyle='--', color='red', label='EGASPIN LIMIT (8.729)')
+
+# Adding labels and title
+plt.xlabel('AFAM REMOTE MANIFOLD')
+plt.ylabel('CO (ppm)')
+plt.title('CO over AFAM REMOTE MANIFOLD')
+plt.legend()
+
+# Display the plot
+plt.grid(True)
+plt.show()
